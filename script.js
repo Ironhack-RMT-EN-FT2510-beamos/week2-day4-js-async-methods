@@ -6,9 +6,7 @@
 //* highligh
 //! error
 //? question
-//todo 
-
-
+//todo
 
 // Asynchronous methods
 
@@ -16,7 +14,6 @@
 // console.log(someVar)
 // someVar += " Bob"
 // console.log(someVar)
-
 
 //*setTimeout
 
@@ -34,8 +31,7 @@
 //   console.log(i)
 // }
 
-// console.log("this is synchronous code") 
-
+// console.log("this is synchronous code")
 
 //* setInterval
 
@@ -56,44 +52,39 @@
 
 // console.log(timerId)
 
-
 // clearInterval
-
 
 // setTimeout(() => {
 //   clearInterval( timerId )
 //   console.log("interval stopping")
 // }, 5000)
 
-
 //* Animating the DOM
 
-const gameBox = document.querySelector("#game-box")
-gameBox.style.backgroundColor = "darkgray"
-gameBox.style.width = "100vw"
-gameBox.style.height = "400px"
-gameBox.style.position = "relative" // only because we want to position elements inside via absolute
+const gameBox = document.querySelector("#game-box");
+gameBox.style.backgroundColor = "darkgray";
+gameBox.style.width = "100vw";
+gameBox.style.height = "400px";
+gameBox.style.position = "relative"; // only because we want to position elements inside via absolute
 
+const cube = document.querySelector("#cube");
+cube.style.backgroundColor = "black";
+cube.style.width = "50px";
+cube.style.height = "50px";
+cube.style.position = "absolute";
+cube.style.top = "20px";
 
-const cube = document.querySelector("#cube")
-cube.style.backgroundColor = "black"
-cube.style.width = "50px"
-cube.style.height = "50px"
-cube.style.position = "absolute"
-cube.style.top = "20px"
-
-let cubePosX = 50
-cube.style.left = `${cubePosX}px` // the line of code that updates the DOM using the JS variable.
+let cubePosX = 50;
+cube.style.left = `${cubePosX}px`; // the line of code that updates the DOM using the JS variable.
 
 const animationIntervalId = setInterval(() => {
-  console.log("testing")
+  console.log("testing");
 
-  cubePosX++
-  console.log(cubePosX)
-  cube.style.left = `${cubePosX}px`
+  cubePosX++;
+  console.log(cubePosX);
+  cube.style.left = `${cubePosX}px`;
 
-  if (cubePosX > (gameBox.offsetWidth - 50)) {
-    clearInterval(animationIntervalId)
+  if (cubePosX > gameBox.offsetWidth - 50) {
+    clearInterval(animationIntervalId);
   }
-
-}, 20)
+}, 20);
